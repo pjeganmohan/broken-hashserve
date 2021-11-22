@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Run Server
         shell: cmd
-        run: call .\startserver.cmd
+        run: call .\.\startserver.cmd
       - name: Run Post Request
         shell: cmd
         run: call .\postrequest.cmd
