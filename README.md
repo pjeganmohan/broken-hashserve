@@ -11,5 +11,9 @@ b. GET to /hash
 c. GET to /stats
 
 This application repository will have the following test cases
-
-
+startserver.cmd - To Start the Hash Server Applicatio
+postrequest.cmd - To Send a Post request to hash the Password
+getrequest.cmd - To get the Hash Value 
+getstat.cmd - To get the Status of the Hash Server Application
+shutdown.cmd - To Shutdown Hash Server Application
+multiple - To send continuous Post request.
