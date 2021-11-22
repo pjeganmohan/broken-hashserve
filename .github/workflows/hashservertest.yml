@@ -1,0 +1,30 @@
+name: HashServer
+
+on: [push,pull_request, issues]
+
+jobs:
+  testRelease:
+    name: Start Server
+    runs-on: windows-latest
+    
+    steps:
+      - name: Run Server
+        shell: cmd
+        run: call .\startserver.cmd
+      - name: Run Post Request
+        shell: cmd
+        run: call .\postrequest.cmd
+      - name: Run Get Request
+        shell: cmd
+        run: call .\getrequest.cmd
+      - name: Run Stat Request
+        shell: cmd 
+        run: call .\getstat.cmd
+      - name: Run Multiple Post Request
+        shell: cmd 
+        run: call .\multiple.cmd
+      - name: Run Shutdown Request
+        shell: cmd
+        run: call .\shutdown.cmd
+        
+ 
