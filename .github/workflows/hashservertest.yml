@@ -11,7 +11,7 @@ jobs:
       - name: Run Server
         shell: cmd
         working-directory: .\master
-        run: call startserver.cmd
+        run: startserver.cmd
       - name: Run Post Request
         shell: cmd
         working-directory: .\master
