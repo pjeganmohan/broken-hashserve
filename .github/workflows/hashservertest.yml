@@ -4,33 +4,33 @@ on: [push,pull_request, issues]
 
 jobs:
   testRelease:
-    name: Start Server
-    runs-on: windows-latest
+    name: Hash Server Testing
+    runs-on: ubuntu-latest
     
     steps:
-      - name: Run Server
-        shell: cmd
+      - name: Start Server
+        shell: bash
         working-directory: .\master
-        run: startserver.cmd
+        run: startserver.sh
       - name: Run Post Request
-        shell: cmd
+        shell: bash
         working-directory: .\master
-        run: call .\postrequest.cmd
+        run: call .\postrequest.sh
       - name: Run Get Request
-        shell: cmd
+        shell: bash
         working-directory: .\master
-        run: call .\getrequest.cmd
-      - name: Run Stat Request
-        shell: cmd
+        run: call .\getrequest.sh
+      - name: Run Stats Request
+        shell: bash
         working-directory: .\master
-        run: call .\getstat.cmd
+        run: call .\getstat.sh
       - name: Run Multiple Post Request
-        shell: cmd 
+        shell: bash
         working-directory: .\master
-        run: call .\multiple.cmd
+        run: call .\multiplerequest.sh
       - name: Run Shutdown Request
-        shell: cmd
+        shell: bash
         working-directory: .\master
-        run: call .\shutdown.cmd
+        run: call .\shutdown.sh
         
  
