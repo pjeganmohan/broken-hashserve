@@ -10,27 +10,21 @@ jobs:
     steps:
       - name: Start Server
         shell: bash
-        working-directory: .\master
-        run: startserver.sh
+        run: ./startserver.sh
       - name: Run Post Request
         shell: bash
-        working-directory: .\master
-        run: call .\postrequest.sh
+        run: ./postrequest.sh
       - name: Run Get Request
         shell: bash
-        working-directory: .\master
-        run: call .\getrequest.sh
+        run: ./getrequest.sh
       - name: Run Stats Request
         shell: bash
-        working-directory: .\master
-        run: call .\getstat.sh
+        run: ./getstat.sh
       - name: Run Multiple Post Request
         shell: bash
-        working-directory: .\master
-        run: call .\multiplerequest.sh
+        run: ./multiplerequest.sh
       - name: Run Shutdown Request
         shell: bash
-        working-directory: .\master
-        run: call .\shutdown.sh
+        run: ./shutdown.sh
         
  
