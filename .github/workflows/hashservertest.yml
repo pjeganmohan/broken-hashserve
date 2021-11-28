@@ -11,25 +11,44 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Start Server
-        shell: bash
-        run:
-          chmod +x ./startserver.sh
-          ./startserver.sh
-      - name: Run Post Request
-        shell: bash
-        run: ./postrequest.sh
-      - name: Run Get Request
-        shell: bash
-        run: ./getrequest.sh
-      - name: Run Stats Request
-        shell: bash
-        run: ./getstat.sh
-      - name: Run Multiple Post Request
-        shell: bash
-        run: ./multiplerequest.sh
-      - name: Run Shutdown Request
-        shell: bash
-        run: ./shutdown.sh
+    - uses: actions/checkout@v4
+    
+    - name: Start Server
+      env: 
+          PORT: 8088
+      shell: bash
+      run:
+            chmod +x ./startserver.sh
+            ./startserver.sh
+            
+    - name: Run Post Request
+      shell: bash  
+      run:
+        chmod +x ./postrequest.sh
+        ./postrequest.sh
+        
+    - name: Run Get Request
+      shell: bash
+      run: 
+        chmod +x ./getrequest.sh
+        ./getrequest.sh
+   
+    - name: Run stats Request
+      shell: bash
+      run: 
+        chmod +x ./getstat.sh
+        ./getstat.sh
+        
+    - name: Run Multiple POST Request
+      shell: bash
+      run: 
+        chmod +x ./multiplerequest.sh
+        ./multiplerequest.sh
+
+    - name: Run Shutdown Request
+      shell: bash
+      run: 
+        chmod +x ./shutdown.sh
+        ./shutdown.sh
         
  
