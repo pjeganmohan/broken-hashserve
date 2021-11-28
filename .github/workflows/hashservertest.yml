@@ -11,13 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v1
     
     - name: Start Server
       env: 
           PORT: 8088
       shell: bash
       run:
+            ls -la
             chmod +x ./startserver.sh
             ./startserver.sh
             
