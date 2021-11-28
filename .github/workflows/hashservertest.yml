@@ -1,6 +1,9 @@
 name: HashServer
 
-on: [push,pull_request, issues]
+on: 
+  push:
+    branches:
+        - master
 
 jobs:
   testRelease:
@@ -10,7 +13,9 @@ jobs:
     steps:
       - name: Start Server
         shell: bash
-        run: ./startserver.sh
+        run:
+          chmod +x ./startserver.sh
+          ./startserver.sh
       - name: Run Post Request
         shell: bash
         run: ./postrequest.sh
